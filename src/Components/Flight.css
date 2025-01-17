@@ -1,0 +1,307 @@
+.Plane {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flying-plane {
+  position: absolute;
+  top: 50vh;
+  left: 30vw;
+  transform: translate(-50%, -50%);
+  animation: fly 20s linear infinite;
+}
+
+.flying-plane img {
+  width: 40vw;
+  height: 40vw;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  25% {
+    transform: translate(-40%, -60%) rotate(-5deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  75% {
+    transform: translate(-60%, -40%) rotate(5deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+.content-panel {
+  position: absolute;
+  margin-top: 20vh;
+  right: 20px;
+  width: 36vw;
+  max-height: 70vh;
+  padding: 24px;
+  overflow-y: auto; 
+
+}
+
+
+/* Add smooth scrolling behavior */
+.content-panel::-webkit-scrollbar {
+  width: 0px;
+}
+
+.content-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+.welcome-text {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    font-size: 8vw;
+    line-height: 1;
+    color: #0000004e;
+    margin-bottom: 8px;
+    text-shadow: 1.5px 0 0 #000; /* Add text shadow to appear thicker */
+    -webkit-text-stroke: 3.5px #000000b4; /* Add stroke to appear thicker */
+}
+
+.service-info {
+  color: #666;
+  font-size: 1.8vw;
+  margin: 12px 0 32px 0;
+  font-weight:800 ;
+}
+
+.flight-route {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.route-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.city-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-name {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.city-code {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+}
+
+.time-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -8px;
+}
+
+.time-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.time {
+  font-size: 14px;
+  color: #000;
+}
+
+.period {
+  font-size: 12px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.flight-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.progress-line {
+  position: relative;
+  width: 100%;
+  height: 0.6vh;
+  background: linear-gradient(to right, #ff5a5f 50%, #e0e0e0 50%);
+  margin: 12px 0;
+  border-radius: 20px;
+}
+
+.plane-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff6262;
+  padding: 4px;
+  border-radius: 50%;
+  font-size: 16px;
+  height:17vw;
+}
+
+
+.duration-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 8px;
+}
+
+
+.duration {
+  font-size: 12px;
+  color: #22c55e;
+  background: #dcfce7;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+.remaining {
+  top:20px;
+  font-size: 12px;
+  color: #22c55e;
+  margin-top: 4px;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.temperature {
+  font-size: 32px;
+  font-weight: 600;
+  color: #000;
+}
+
+.weather-card {
+  margin-top:3vh;
+}
+.weather-desc {
+  margin-top:10vh;
+  font-size: 14px;
+  color: #666;
+}
+
+.weather-icon {
+  width: 48px;
+  height: 48px;
+  background: #e5f6ff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.music-section {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.music-header {
+  margin-bottom: 16px;
+}
+
+.music-title {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.music-subtitle {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-top: 2px;
+}
+
+.music-player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.song-name {
+  font-size: 14px;
+  color: #000;
+}
+
+.play-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #f5f5f5;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.album-art img {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}

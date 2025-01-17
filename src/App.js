@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Flight from './Components/Flight';
+import Sidebar from './Components/Sidebar';
+import TopBar from './Components/TopBar';
+import { useState } from 'react';
 
 function App() {
+  const [activeIcon, setActiveIcon] = useState('plane');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TopBar />
+      <Sidebar className='sidebar' activeIcon={activeIcon} setActiveIcon={setActiveIcon} />
+      <div className="main-content">
+        <Flight classNmae='Plane' />
+      </div>
     </div>
   );
 }
