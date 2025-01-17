@@ -73,7 +73,7 @@ function Flight() {
             </div>
             <div className="music-player">
               <div className="song-info">
-                <span className="song-name">Spiderman...</span>
+                <span className="song-name">Spiderman...!</span>
                 <button className="play-button">▶</button>
               </div>
               <div className="album-art">
