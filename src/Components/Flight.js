@@ -4,11 +4,15 @@ import '../App.css';
 import './Flight.css';
 import cloudsVideo from '../Media/clouds.mp4';
 import planeImage from '../Media/Plane.png';
+import weather from '../Media/weather.png';
+import coverimg from '../Media/cover.png';
+import movieicon from '../Media/movieimg.png';
 import { Plane as PlaneIcon } from 'lucide-react';
 
-function Flight() {
+function Flight({ className }) {
   return (
-    <div className="Plane">
+    <div className={`Plane ${className}`}>
+
       <div className="video-background">
         <video autoPlay muted loop>
           <source src={cloudsVideo} type="video/mp4" />
@@ -63,7 +67,7 @@ function Flight() {
               <span className="temperature">62°</span>
               <span className="weather-desc">Cloudy</span>
             </div>
-            <div className="weather-icon">☀️</div>
+            <div className="weather-icon"><img src={weather} alt="weather" /></div>
           </div>
 
           <div className="music-section">
@@ -73,17 +77,33 @@ function Flight() {
             </div>
             <div className="music-player">
               <div className="song-info">
-                <span className="song-name">Spiderman...!</span>
+                <span className="song-name">All Girls re the same...!</span>
                 <button className="play-button">▶</button>
               </div>
               <div className="album-art">
-                <img src="spiderman-cover.jpg" alt="Album Cover" />
+                <img src={coverimg} alt="Album Cover" />
+              </div>
+            </div>
+          </div>
+
+          <div className="movie-section">
+            <div className="music-header">
+              <span className="music-title">Spiderman....</span>
+            </div>
+            <div className="music-player">
+              <div className="song-info">
+                <span className="song-name">Across the Spider-Verse!</span>
+                <button className="play-button">▶</button>
+              </div>
+              <div className="movie-art">
+                <img src={movieicon} alt="Album Cover" />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   );
 }
 

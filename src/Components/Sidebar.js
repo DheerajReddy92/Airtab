@@ -1,13 +1,13 @@
 
 import React from 'react';
 import './Sidebar.css';
-import { Plane, Home, Map, Calendar, Settings, User } from 'lucide-react';
+import { Plane, Headphones, MonitorPlay, Calendar, Settings, User } from 'lucide-react';
 
 const Sidebar = ({ activeIcon, setActiveIcon }) => {
   const icons = [
     { icon: Plane, id: 'plane' },
-    { icon: Home, id: 'home' },
-    { icon: Map, id: 'map' },
+    { icon: Headphones, id: 'headphones' },
+    { icon: MonitorPlay, id: 'monitorPlay' },
     { icon: Calendar, id: 'calendar' },
     { icon: Settings, id: 'settings' },
     { icon: User, id: 'user' },
