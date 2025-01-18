@@ -1,11 +1,15 @@
 // Music.js
 import React from 'react';
 import './Music.css';
-import { Music2 } from 'lucide-react';
+import backgroundImage from '../Media/mscbackground.png'; // 
 
 function Music({ className }) {
   return (
     <div className={className}>
+      <div 
+        className="music-background" 
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
       <div className="music-background">
         <div className="music-container">
           {/* Left Side - Player */}
@@ -74,6 +78,7 @@ function Music({ className }) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
