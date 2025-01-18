@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/airtab/static/css/main.69ef0674.css",
+    "main.css": "/airtab/static/css/main.9cc19730.css",
     "main.js": "/airtab/static/js/main.b99cddf0.js",
     "static/js/453.072388eb.chunk.js": "/airtab/static/js/453.072388eb.chunk.js",
     "static/media/clouds.mp4": "/airtab/static/media/clouds.746e10665962a1c1fe61.mp4",
@@ -11,12 +11,12 @@
     "static/media/Plane.png": "/airtab/static/media/Plane.d3672cd358ec7e6c642c.png",
     "static/media/topicon.png": "/airtab/static/media/topicon.c685eb8d4a8f8d8ef780.png",
     "index.html": "/airtab/index.html",
-    "main.69ef0674.css.map": "/airtab/static/css/main.69ef0674.css.map",
+    "main.9cc19730.css.map": "/airtab/static/css/main.9cc19730.css.map",
     "main.b99cddf0.js.map": "/airtab/static/js/main.b99cddf0.js.map",
     "453.072388eb.chunk.js.map": "/airtab/static/js/453.072388eb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69ef0674.css",
+    "static/css/main.9cc19730.css",
     "static/js/main.b99cddf0.js"
   ]
 }
