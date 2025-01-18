@@ -60,7 +60,7 @@
     display: flex;
     border-radius: 20px;
     height: 100vh;
-    margin-left: 102px;
+    margin-left: 16vw;
   }
   
   .player-section {
@@ -134,7 +134,8 @@
   
   .playlist-section {
     flex: 1;
-    padding: 40px;
+    padding-top: 15vh;
+    margin-left:2vh;
   }
   
   .playlist-header {
