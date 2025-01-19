@@ -10,7 +10,7 @@ function Music({ className }) {
   return (
     <div className={className}>
       <div 
-        className="music-background animate-in" 
+        className="music-background" 
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
         <div className="notes-container">
