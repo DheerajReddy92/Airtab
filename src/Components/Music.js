@@ -1,28 +1,48 @@
 // Music.js
 import React from 'react';
 import './Music.css';
-import backgroundImage from '../Media/mscbackground.png'; // 
+import { Music2 } from 'lucide-react';
+import backgroundImage from '../Media/mscbackground.png';
+
+
 
 function Music({ className }) {
   return (
     <div className={className}>
       <div 
-        className="music-background" 
+        className="music-background animate-in" 
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-      <div className="music-background">
+        <div className="notes-container">
+          {Array.from({ length: 10 }).map((_, i) => (
+            <div
+              key={i}
+              className="music-note"
+              style={{
+                left: `${Math.random() * 100}%`,
+                bottom: `-50px`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${8 + Math.random() * 4}s`,
+                opacity: 0
+              }}
+            >
+              <Music2 className="note-icon" />
+            </div>
+          ))}
+        </div>
+
         <div className="music-container">
           {/* Left Side - Player */}
           <div className="player-section">
-            <button className="back-button">⟨</button>
+            <button className="back-button animate-fade">⟨</button>
             
-            <div className="disc-player">
+            <div className="disc-player animate-zoom">
               <div className="disc">
-                <button className="play-pause">II</button>
+                <button className="play-pause animate-expand">II</button>
               </div>
             </div>
             
-            <div className="player-controls">
+            <div className="player-controls animate-slide-up">
               <button className="skip-btn">⟨⟨</button>
               <div className="progress-bar">
                 <div className="progress"></div>
@@ -30,7 +50,7 @@ function Music({ className }) {
               <button className="skip-btn">⟩⟩</button>
             </div>
             
-            <div className="shuffle-repeat">
+            <div className="shuffle-repeat animate-slide-up">
               <button className="shuffle">⤨</button>
               <button className="repeat">⟳</button>
             </div>
@@ -38,50 +58,43 @@ function Music({ className }) {
 
           {/* Right Side - Playlist */}
           <div className="playlist-section">
-            <div className="playlist-header">
+            <div className="playlist-header animate-fade-in">
               <h1>Good Vibe</h1>
               <p>Multiple Artists • 26 songs</p>
               <button className="menu-btn">⋮</button>
             </div>
             
-            <div className="song-list">
-              <div className="song-item active">
-                <span className="number">1</span>
+                      
+          <div className="song-list">
+            {[
+              { number: "1", title: "Fourty six and 2", active: true },
+              { number: "2", title: "Change", artist: "Deftones" },
+              { number: "3", title: "Invincible" },
+              { number: "4", title: "Faded Lines" }
+            ].map((song, index) => (
+              <div 
+                key={index}
+                className={`song-item ${song.active ? 'active' : ''} ${className.includes('animate-exit') ? '' : 'animate-slide-up'}`}
+                style={className.includes('animate-exit') ? {} : { animationDelay: `${1.2 + (index * 0.1)}s` }}
+              >
+                <span className="number">{song.number}</span>
                 <div className="song-info">
-                  <span className="title">Fourty six and 2</span>
+                  <span className="title">{song.title}</span>
+                  {song.artist && <span className="artist">{song.artist}</span>}
                 </div>
                 <button className="play">▶</button>
               </div>
-              <div className="song-item">
-                <span className="number">2</span>
-                <div className="song-info">
-                  <span className="title">Change</span>
-                  <span className="artist">Deftones</span>
-                </div>
-                <button className="play">▶</button>
-              </div>
-              <div className="song-item">
-                <span className="number">3</span>
-                <div className="song-info">
-                  <span className="title">Invincible</span>
-                </div>
-                <button className="play">▶</button>
-              </div>
-              <div className="song-item">
-                <span className="number">4</span>
-                <div className="song-info">
-                  <span className="title">Faded Lines</span>
-                </div>
-                <button className="play">▶</button>
-              </div>
-            </div>
+            ))}
+          </div>
+
           </div>
         </div>
       </div>
     </div>
-    </div>
   );
 }
+
+
 
 
 export default Music;

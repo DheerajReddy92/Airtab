@@ -5,7 +5,6 @@ import TopBar from './Components/TopBar';
 import Music from './Components/Music';
 import { useState } from 'react';
 
-// App.js
 function App() {
   const [activeIcon, setActiveIcon] = useState('plane');
   const [isAnimating, setIsAnimating] = useState(false);
@@ -16,7 +15,13 @@ function App() {
       setTimeout(() => {
         setActiveIcon(id);
         setIsAnimating(false);
-      }, 1500); // Animation duration
+      }, 1500);
+    } else if (activeIcon === 'headphones' && id === 'plane') {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActiveIcon(id);
+        setIsAnimating(false);
+      }, 1500);
     } else {
       setActiveIcon(id);
     }
@@ -25,11 +30,15 @@ function App() {
   const renderComponent = () => {
     switch(activeIcon) {
       case 'plane':
-        return <Flight className={isAnimating ? 'animate-exit' : 'animate-enter'} />;
+        return <Flight className={isAnimating ? 'animate-exit' : ''} />;
       case 'headphones':
-        return <Music className='music' />;
+        return (
+          <Music 
+            className={`music ${isAnimating ? 'animate-exit' : ''}`} 
+          />
+        );
       default:
-        return <Flight className='animate-enter' />;
+        return <Flight className='' />;
     }
   };
 
