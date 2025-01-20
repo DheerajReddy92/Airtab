@@ -29,7 +29,7 @@ function App() {
       setTimeout(() => {
         setActiveIcon(id);
         setIsAnimating(false);
-      }, 1500);
+      }, 800);
     } else {
       setActiveIcon(id);
     }
