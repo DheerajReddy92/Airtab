@@ -3,6 +3,8 @@ import Flight from './Components/Flight';
 import Sidebar from './Components/Sidebar';
 import TopBar from './Components/TopBar';
 import Music from './Components/Music';
+import Movie from './Components/Movie';
+
 import { useState } from 'react';
 
 function App() {
@@ -22,6 +24,12 @@ function App() {
         setActiveIcon(id);
         setIsAnimating(false);
       }, 1500);
+    } else if (id === 'monitorPlay' && (activeIcon === 'plane' || activeIcon === 'headphones')) {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActiveIcon(id);
+        setIsAnimating(false);
+      }, 1500);
     } else {
       setActiveIcon(id);
     }
@@ -35,6 +43,12 @@ function App() {
         return (
           <Music 
             className={`music ${isAnimating ? 'animate-exit' : ''}`} 
+          />
+        );
+      case 'monitorPlay':
+        return (
+          <Movie 
+            className={`movie ${isAnimating ? 'animate-exit' : ''}`} 
           />
         );
       default:
@@ -56,6 +70,7 @@ function App() {
     </div>
   );
 }
+
 
 
 export default App;

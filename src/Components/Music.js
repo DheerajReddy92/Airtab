@@ -3,6 +3,8 @@ import React from 'react';
 import './Music.css';
 import { Music2 } from 'lucide-react';
 import backgroundImage from '../Media/mscbackground.png';
+import discBackground from '../Media/deskimg.jpg';
+
 
 
 
@@ -37,10 +39,18 @@ function Music({ className }) {
             <button className="back-button animate-fade">⟨</button>
             
             <div className="disc-player animate-zoom">
-              <div className="disc">
+              <div 
+                className="disc"
+                style={{ 
+                  backgroundImage: `url(${discBackground})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              >
                 <button className="play-pause animate-expand">II</button>
               </div>
             </div>
+
             
             <div className="player-controls animate-slide-up">
               <button className="skip-btn">⟨⟨</button>
