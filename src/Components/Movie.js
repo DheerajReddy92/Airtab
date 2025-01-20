@@ -74,15 +74,14 @@ function Movie({ className }) {
   const [activeMovie, setActiveMovie] = useState(0);
 
   return (
-    <div className={`movie ${className}`}>
-  <div className="featured-movie">
-    <div 
-      className={`movie-backdrop ${className.includes('animate-exit') ? 'animate-zoom-out' : 'animate-zoom-in'}`}
-      style={{ 
-        backgroundImage: `url(${movies[activeMovie].image})`,
-      }}
-    >
-
+    <div className={className}>
+      <div className="featured-movie">
+        <div 
+          className={`movie-backdrop ${className.includes('animate-exit') ? 'animate-zoom-out' : 'animate-zoom-in'}`}
+          style={{ 
+            backgroundImage: `url(${movies[activeMovie].image})`,
+          }}
+        >
           <div className="backdrop-overlay">
             <div className={`movie-info ${className.includes('animate-exit') ? 'animate-slide-out' : 'animate-slide-in'}`}>
               <div className="stream-tag">WEB FILM</div>
@@ -106,7 +105,7 @@ function Movie({ className }) {
       </div>
 
       {/* Movie Carousel */}
-      <div className={`movie-section2 ${className.includes('animate-exit') ? 'animate-fade-out' : 'animate-fade-in'}`}>
+      <div className={`movie-section2 ${className.includes('animate-exit') ? 'animate-fade-out' : ''}`}>
         <h2 className="section-title">Start Watching</h2>
         <div className="movie-carousel">
           {movies.map((movie, index) => (

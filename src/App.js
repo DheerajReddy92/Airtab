@@ -4,56 +4,59 @@ import Sidebar from './Components/Sidebar';
 import TopBar from './Components/TopBar';
 import Music from './Components/Music';
 import Movie from './Components/Movie';
-
 import { useState } from 'react';
 
 function App() {
   const [activeIcon, setActiveIcon] = useState('plane');
   const [isAnimating, setIsAnimating] = useState(false);
+  const [prevIcon, setPrevIcon] = useState(null);
 
   const handleIconChange = (id) => {
+    setPrevIcon(activeIcon);
     if (id === 'headphones' && activeIcon === 'plane') {
       setIsAnimating(true);
       setTimeout(() => {
         setActiveIcon(id);
         setIsAnimating(false);
-      }, 1500);
+      }, 800);
     } else if (activeIcon === 'headphones' && id === 'plane') {
       setIsAnimating(true);
       setTimeout(() => {
         setActiveIcon(id);
         setIsAnimating(false);
-      }, 1500);
-    } else if (id === 'monitorPlay' && (activeIcon === 'plane' || activeIcon === 'headphones')) {
+      }, 800);
+    } else if (activeIcon === 'monitorPlay') {
       setIsAnimating(true);
       setTimeout(() => {
         setActiveIcon(id);
         setIsAnimating(false);
-      }, 800);
+      }, 400);
+    } else if (id === 'monitorPlay') {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setActiveIcon(id);
+        setIsAnimating(false);
+      }, 600);
     } else {
       setActiveIcon(id);
     }
   };
 
   const renderComponent = () => {
-    switch(activeIcon) {
-      case 'plane':
-        return <Flight className={isAnimating ? 'animate-exit' : ''} />;
-      case 'headphones':
-        return (
-          <Music 
-            className={`music ${isAnimating ? 'animate-exit' : ''}`} 
-          />
-        );
-      case 'monitorPlay':
-        return (
-          <Movie 
-            className={`movie ${isAnimating ? 'animate-exit' : ''}`} 
-          />
-        );
-      default:
-        return <Flight className='' />;
+    if (activeIcon === 'plane' || (isAnimating && prevIcon === 'plane')) {
+      return <Flight className={isAnimating && prevIcon === 'plane' ? 'animate-exit' : ''} />;
     }
+    if (activeIcon === 'headphones' || (isAnimating && prevIcon === 'headphones')) {
+      return <Music className={`music ${isAnimating && prevIcon === 'headphones' ? 'animate-exit' : ''}`} />;
+    }
+    if (activeIcon === 'monitorPlay' || (isAnimating && prevIcon === 'monitorPlay')) {
+      return (
+        <Movie 
+          className={`movie ${isAnimating && prevIcon === 'monitorPlay' ? 'animate-exit' : ''}`} 
+        />
+      );
+    }
+    return null;
   };
 
   return (
@@ -70,7 +73,5 @@ function App() {
     </div>
   );
 }
-
-
 
 export default App;
