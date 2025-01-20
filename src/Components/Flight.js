@@ -1,6 +1,5 @@
 // Flight.js
 import React from 'react';
-import '../App.css';
 import './Flight.css';
 import cloudsVideo from '../Media/clouds.mp4';
 import planeImage from '../Media/Plane.png';
