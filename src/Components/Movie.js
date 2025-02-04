@@ -133,6 +133,7 @@ function Movie({ className }) {
                 </div>
               </div>
             </div>
+            
           ))}
         </div>
       </div>
