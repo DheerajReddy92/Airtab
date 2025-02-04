@@ -104,7 +104,7 @@ function Movie({ className }) {
         </div>
       </div>
 
-      {/* Movie Carousel */}
+      {/* Movie Carousel  */}
       <div className={`movie-section2 ${className.includes('animate-exit') ? 'animate-fade-out' : ''}`}>
         <h2 className="section-title">Start Watching</h2>
         <div className="movie-carousel">
@@ -133,7 +133,7 @@ function Movie({ className }) {
                 </div>
               </div>
             </div>
-            
+
           ))}
         </div>
       </div>
