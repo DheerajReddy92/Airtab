@@ -2,11 +2,6 @@
 import React from 'react';
 // import './Flight.css';
 import '../App.css'
-import cloudsVideo from '../Media/clouds.mp4';
-import planeImage from '../Media/Plane.png';
-import weather from '../Media/weather.png';
-import coverimg from '../Media/cover.png';
-import movieicon from '../Media/movieimg.png';
 import { Plane as PlaneIcon } from 'lucide-react';
 
 function Flight({ className }) {
@@ -15,11 +10,11 @@ function Flight({ className }) {
 
       <div className="video-background">
         <video autoPlay muted loop>
-          <source src={cloudsVideo} type="video/mp4" />
+          <source src={ process.env.PUBLIC_URL +"/Media/clouds.mp4"} type="video/mp4" />
         </video>
       </div>
       <div className="flying-plane">
-        <img src={planeImage} alt="Flying Plane" />
+        <img src={ process.env.PUBLIC_URL +"/Media/Plane.png"} alt="Flying Plane" />
       </div>
       <div className="content-panel">
         <div className="panel-content">
@@ -67,7 +62,7 @@ function Flight({ className }) {
               <span className="temperature">62°</span>
               <span className="weather-desc">Cloudy</span>
             </div>
-            <div className="weather-icon"><img src={weather} alt="weather" /></div>
+            <div className="weather-icon"><img src={ process.env.PUBLIC_URL +"/Media/weather.png"} alt="weather" /></div>
           </div>
 
           <div className="music-section">
@@ -81,7 +76,7 @@ function Flight({ className }) {
                 <button className="play-button">▶</button>
               </div>
               <div className="album-art">
-                <img src={coverimg} alt="Album Cover" />
+                <img src={ process.env.PUBLIC_URL +"/Media/cover.png"} alt="Album Cover" />
               </div>
             </div>
           </div>
@@ -96,7 +91,7 @@ function Flight({ className }) {
                 <button className="play-button">▶</button>
               </div>
               <div className="movie-art">
-                <img src={movieicon} alt="Album Cover" />
+                <img src={ process.env.PUBLIC_URL +"/Media/movieimg.png"} alt="Album Cover" />
               </div>
             </div>
           </div>

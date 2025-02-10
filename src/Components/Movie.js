@@ -1,12 +1,11 @@
 // Movies.js
 import React, { useState } from 'react';
 // import './Movie.css';
-import '../App.css'
-import spiderMan from '../Media/movieimg.png';
-import tenet from '../Media/tenet.avif';
-import predestination from '../Media/predestination.jpg';
-import nohardfeelings from '../Media/nohardfeelings.jpg';
-import suzume from '../Media/suzume.webp';
+const spiderMan = process.env.PUBLIC_URL + '/Media/movieimg.png';
+const tenet = process.env.PUBLIC_URL + '/Media/tenet.avif';
+const predestination = process.env.PUBLIC_URL + '/Media/predestination.jpg';
+const nohardfeelings = process.env.PUBLIC_URL + '/Media/nohardfeelings.jpg';
+const suzume = process.env.PUBLIC_URL + '/Media/suzume.webp';
 
 function Movie({ className }) {
   const movies = [
