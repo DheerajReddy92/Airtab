@@ -1,27 +1,15 @@
 {
   "files": {
     "main.css": "/airtab/static/css/main.8d500cb0.css",
-    "main.js": "/airtab/static/js/main.f5354c85.js",
+    "main.js": "/airtab/static/js/main.40b094c6.js",
     "static/js/453.072388eb.chunk.js": "/airtab/static/js/453.072388eb.chunk.js",
-    "static/media/clouds.mp4": "/airtab/static/media/clouds.746e10665962a1c1fe61.mp4",
-    "static/media/weather.png": "/airtab/static/media/weather.0d0f7120476ea2946c1f.png",
-    "static/media/movieimg.png": "/airtab/static/media/movieimg.5040337b22769bc04c4b.png",
-    "static/media/mscbackground.png": "/airtab/static/media/mscbackground.c17b6d4fa644389f2320.png",
-    "static/media/cover.png": "/airtab/static/media/cover.fe8d8d8253ced0ee58dd.png",
-    "static/media/suzume.webp": "/airtab/static/media/suzume.fb0a532d152e57818d59.webp",
-    "static/media/Plane.png": "/airtab/static/media/Plane.d3672cd358ec7e6c642c.png",
-    "static/media/nohardfeelings.jpg": "/airtab/static/media/nohardfeelings.f4bb505ab0e85cceaa83.jpg",
-    "static/media/deskimg.jpg": "/airtab/static/media/deskimg.ec8b459ffd84507263ab.jpg",
-    "static/media/predestination.jpg": "/airtab/static/media/predestination.4d845babd63def6e6711.jpg",
-    "static/media/tenet.avif": "/airtab/static/media/tenet.9b12004fc9c4068f7706.avif",
-    "static/media/topicon.png": "/airtab/static/media/topicon.c685eb8d4a8f8d8ef780.png",
     "index.html": "/airtab/index.html",
     "main.8d500cb0.css.map": "/airtab/static/css/main.8d500cb0.css.map",
-    "main.f5354c85.js.map": "/airtab/static/js/main.f5354c85.js.map",
+    "main.40b094c6.js.map": "/airtab/static/js/main.40b094c6.js.map",
     "453.072388eb.chunk.js.map": "/airtab/static/js/453.072388eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8d500cb0.css",
-    "static/js/main.f5354c85.js"
+    "static/js/main.40b094c6.js"
   ]
 }
