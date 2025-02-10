@@ -1,6 +1,7 @@
 // Navbar.js
 import React, { useState } from 'react';
-import './TopBar.css'
+// import './TopBar.css'
+import '../App.css'
 import { Sun, SunDim, Volume1, Volume2, HelpCircle } from 'lucide-react';
 import topicon from '../Media/topicon.png';
 const Navbar = () => {

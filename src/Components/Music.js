@@ -1,6 +1,7 @@
 // Music.js
 import React from 'react';
-import './Music.css';
+// import './Music.css';
+import '../App.css'
 import { Music2 } from 'lucide-react';
 import backgroundImage from '../Media/mscbackground.png';
 import discBackground from '../Media/deskimg.jpg';

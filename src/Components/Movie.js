@@ -1,6 +1,7 @@
 // Movies.js
 import React, { useState } from 'react';
-import './Movie.css';
+// import './Movie.css';
+import '../App.css'
 import spiderMan from '../Media/movieimg.png';
 import tenet from '../Media/tenet.avif';
 import predestination from '../Media/predestination.jpg';

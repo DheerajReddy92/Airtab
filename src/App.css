@@ -8,3 +8,1631 @@
 
   
 
+/* Flight.css */
+
+
+
+.Plane {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flying-plane {
+  position: absolute;
+  top: 50vh;
+  left: 30vw;
+  transform: translate(-50%, -50%);
+  animation: fly 20s linear infinite;
+}
+
+.flying-plane img {
+  width: 40vw;
+  height: 40vw;
+}
+
+@keyframes fly {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  25% { transform: translate(-40%, -60%) rotate(-5deg); }
+  50% { transform: translate(-50%, -50%) rotate(0deg); }
+  75% { transform: translate(-60%, -40%) rotate(5deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+.content-panel {
+  position: absolute;
+  top: 20vh;
+  right: 20px;
+  width: 36vw;
+  max-height: 70vh;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.content-panel::-webkit-scrollbar {
+  width: 0px;
+}
+
+.content-panel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+.welcome-text {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 8vw;
+  line-height: 1;
+  color: #1414144e;
+  margin-bottom: 8px;
+  text-shadow: 1.5px 0 0 #000000d0;
+  -webkit-text-stroke: 3.5px #000000be;
+}
+
+.service-info {
+  color: #666;
+  font-size: 1.8vw;
+  margin: 12px 0 32px 0;
+  font-weight: 800;
+}
+
+.flight-route {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+}
+
+.route-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.city-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.city {
+  display: flex;
+  flex-direction: column;
+}
+
+.city-name {
+  font-size: clamp(12px, 2.4vw, 16px);
+  color: #666;
+  margin-bottom: 4px;
+  margin-right: 4px;
+}
+
+.city-code {
+  font-size: clamp(12px, 5vw, 46px);
+  font-weight: bold;
+  color: #000;
+}
+
+.time-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -8px;
+}
+
+.time-wrapper {
+  display: flex;
+  align-items: baseline;
+}
+
+.time {
+  font-size: clamp(12px, 3vw, 26px);
+  color: #000;
+}
+
+.period {
+  font-size: clamp(12px, 3.2vw, 22px);
+  color: #666;
+  margin-left: 4px;
+  
+}
+
+.flight-progress {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.progress-line {
+  position: relative;
+  width: 100%;
+  height: 0.6vh;
+  background: linear-gradient(to right, #ff5a5f 50%, #e0e0e0 50%);
+  margin: 12px 0;
+  border-radius: 20px;
+}
+
+.plane-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ff6262;
+  background: white;
+  padding: 4px;
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+}
+
+.duration-text {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.duration {
+  font-size: 12px;
+  color: #22c55e;
+  background: #dcfce7;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.remaining {
+  font-size: 12px;
+  color: #22c55e;
+}
+
+.weather-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 16px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 1;
+}
+
+.temperature {
+  font-size: clamp(18px, 3vw, 36px);
+  font-weight: 600;
+  color: #000;
+}
+
+.weather-desc {
+  font-size: 14px;
+  color: #666;
+}
+
+.weather-icon {
+  position: relative;
+  width: 12vw;
+  height: 10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left:3vw;
+}
+
+.weather-icon::before {
+  content: '';
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  width: 120%;
+  height: calc(100% + 32px);
+  background: #40b4f3;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.weather-icon img {
+  position: relative;
+  width: 120%;
+  height: 140%;
+  object-fit: contain;
+  margin-right: 10vw;
+  z-index: 1;
+}
+
+.music-section {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+  height: 9vw;
+}
+
+.music-title {
+  font-size: clamp(12px, 2vw, 18px);
+}
+
+.music-subtitle {
+  font-size: clamp(12px, 2vw, 18px);
+}
+
+.music-header {
+  position: relative;
+  z-index: 1;
+}
+
+.music-player {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top:3vh;
+}
+
+.song-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5vw;
+}
+
+.song-name {
+  font-size: clamp(7px, 2.5vw, 22px);
+}
+
+.album-art {
+  position: absolute;
+  top: -69px;
+  right: -5vw;
+  height:17vw;
+  /* height: calc(100% + 32px); */
+  overflow: hidden;
+}
+
+.album-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.movie-section {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+  height: 9vw;
+  top:2vh;
+  height:10vw
+}
+
+
+.movie-art {
+  position: absolute;
+    top: -65px;
+    right: -5vw;
+    height:17vw;
+    /* height: calc(100% + 32px); */
+    overflow: hidden;
+}
+
+.movie-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Plane .flying-plane {
+  animation: flyNormal 20s linear infinite;
+}
+
+.Plane.animate-exit .flying-plane {
+  animation: flyOut 2s ease-out forwards;
+}
+
+@keyframes flyNormal {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  25% { transform: translate(-40%, -60%) rotate(-5deg); }
+  50% { transform: translate(-50%, -50%) rotate(0deg); }
+  75% { transform: translate(-60%, -40%) rotate(5deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes flyOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150%, -50%) scale(2.5) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Optional: Add entrance animation */
+@keyframes flyIn {
+  0% {
+    transform: translate(-150%, -50%) scale(2.5) rotate(-45deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+
+
+
+/* Entrance zoom animation for video background */
+.video-background {
+  animation: zoomInBackground 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Exit zoom animation for video background */
+.animate-exit .video-background {
+  animation: zoomOutBackground 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes zoomInBackground {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOutBackground {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+
+/* control pannel animation  */
+
+
+
+/* Remove the general opacity: 0 from content-panel */
+.content-panel {
+  position: absolute;
+  top: 20vh;
+  right: 20px;
+  width: 36vw;
+  max-height: 70vh;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Add animations for each section */
+.panel-content .welcome-text {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+  animation-delay: 2.5s;
+}
+
+.panel-content .service-info {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+  animation-delay: 2.7s;
+}
+
+.panel-content .flight-route {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+  animation-delay: 2.9s;
+}
+
+.panel-content .weather-card {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+  animation-delay: 3.1s;
+}
+
+.panel-content .music-section {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+  animation-delay: 3.3s;
+}
+
+.panel-content .movie-section {
+  opacity: 0;
+  animation: slideUpFade 0.8s ease-out forwards;
+  animation-delay: 3.5s;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+/* control pannel exit animation */
+
+
+
+
+
+
+
+/* Control panel exit animations */
+.Plane.animate-exit .panel-content {
+  pointer-events: none; /* Prevent interactions during animation */
+}
+
+.Plane.animate-exit .panel-content .welcome-text {
+  animation: slideRightFade 1s ease-out forwards;
+}
+
+.Plane.animate-exit .panel-content .service-info {
+  animation: slideRightFade 1s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.Plane.animate-exit .panel-content .flight-route {
+  animation: slideRightFade 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.Plane.animate-exit .panel-content .weather-card {
+  animation: slideRightFade 1s ease-out forwards;
+  animation-delay: 0.3s;
+}
+
+.Plane.animate-exit .panel-content .music-section {
+  animation: slideRightFade 1s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.Plane.animate-exit .panel-content .movie-section {
+  animation: slideRightFade 1s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes slideRightFade {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100px);
+    visibility: hidden;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* plane animation */
+
+
+.flying-plane {
+  position: absolute;
+  top: 50vh;
+  left: 30vw;
+  transform: translate(-50%, -50%);
+}
+
+/* Combined smooth animation with consistent speed */
+.Plane .flying-plane {
+  animation: flyInAndNormal 22s linear infinite;
+}
+
+/* Exit animation override */
+.Plane.animate-exit .flying-plane {
+  animation: flyOut 2s ease-out forwards;
+}
+
+@keyframes flyInAndNormal {
+  /* Initial fly in with consistent speed */
+  0% {
+    transform: translate(100%, -100%) scale(0.1) rotate(45deg);
+    opacity: 0;
+  }
+  7% {
+    transform: translate(25%, -75%) scale(0.5) rotate(25deg);
+    opacity: 0.7;
+  }
+  15% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  /* Normal flying pattern */
+  40% { transform: translate(-40%, -60%) rotate(-5deg); }
+  65% { transform: translate(-50%, -50%) rotate(0deg); }
+  90% { transform: translate(-60%, -40%) rotate(5deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes flyOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-150%, -50%) scale(2.5) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+
+
+
+
+/* Movie,css */
+
+
+
+
+/* Base styles */
+.movie {
+  height: 100vh;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.featured-movie {
+  height: 100vh;
+  position: relative;
+}
+
+.movie-backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+}
+
+.backdrop-overlay {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      to right,
+      rgba(0,0,0,0.8) 0%,
+      rgba(0,0,0,0.4) 40%,
+      rgba(0,0,0,0) 100%
+  );
+  display: flex;
+  align-items: center;
+}
+
+.movie-info {
+  max-width: 40%;
+  color: white;
+  margin-left: 8vw;
+  margin-top: -40vh;
+  opacity: 1;
+}
+
+.stream-tag {
+  font-size: 3vw;
+  margin-bottom: 0.6vw;
+  color: #e50914;
+}
+
+.movie-title {
+  font-size: 2.8vw;
+  margin: 1rem 0;
+  font-family: cursive;
+}
+
+.movie-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.movie-description {
+  font-size: 1.2vw;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.movie-section2 {
+  margin-left: 10vw;
+  margin-top: -49.9vh;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title {
+  color: rgba(106, 201, 242, 0.774);
+  font-style: italic;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.movie-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+  scrollbar-width: none;
+}
+
+.movie-card {
+  flex: 0 0 200px;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 1;
+}
+
+.movie-card.active {
+  transform: scale(1.1);
+}
+
+.movie-card img {
+  width: 100%;
+  aspect-ratio: 2/3;
+  object-fit: cover;
+}
+
+.card-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #e50914;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(
+      to top,
+      rgba(0,0,0,0.9) 0%,
+      rgba(0,0,0,0) 100%
+  );
+  opacity: 0;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.movie-card:hover .card-info {
+  opacity: 1;
+}
+
+/* Animations */
+.animate-zoom-in {
+  animation: zoomInBackground 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-zoom-out {
+  animation: zoomOutBackground 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes zoomInBackground {
+  from {
+      transform: scale(1.05);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes zoomOutBackground {
+  from {
+      transform: scale(1);
+      opacity: 1;
+  }
+  to {
+      transform: scale(1.05);
+      opacity: 0;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s forwards;
+}
+
+.animate-slide-out {
+  animation: slideOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideIn {
+  0% {
+      transform: translateX(-30px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(-30px);
+      opacity: 0;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(20px);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+/* Movie cards animation */
+.movie-card {
+  animation: fadeIn 0.3s ease forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Hide scrollbar */
+.movie-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+/* Movie director style */
+.movie-director {
+  font-size: 1.4vw;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+
+.animate-exit .movie-backdrop {
+  animation: zoomOutBackground 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .movie-info {
+  animation: slideOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .movie-section2 {
+  animation: fadeOut 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes zoomOutBackground {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: scale(1.05);
+      opacity: 0;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(-30px);
+      opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+
+
+
+
+
+/* Music.css */
+
+
+
+
+
+.music-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+  
+  .notes-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .music-note {
+    position: absolute;
+    animation: float-up 13s linear infinite;
+    will-change: transform;
+  }
+  
+  .note-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #ea580c; /* orange-600 */
+  }
+  
+  @keyframes float-up {
+    0% {
+      transform: translateY(100vh) rotate(100deg);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  /* Pulse animation for music notes when audio is playing */
+  @keyframes pulsemusic {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+
+
+
+
+
+  .music-container {
+    display: flex;
+    border-radius: 20px;
+    height: 100vh;
+    margin-left: 16vw;
+  }
+  
+  .player-section {
+    flex: 1;
+    width:40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .back-button {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .disc-player {
+    width: 41vw;
+    height: 41vw;
+    max-width: 350px;
+    max-height: 350px;
+    position: relative;
+    margin-top:8vh;
+  }
+  
+  .disc {
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(145deg, #e6f4ff, #b4e1fe); */
+    opacity: 0.8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .play-pause {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: none;
+    background: #444;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .player-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top:8vh;
+  }
+  
+  .progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #e0e0e0;
+    border-radius: 2px;
+  }
+  
+  .progress {
+    width: 30%;
+    height: 100%;
+    background: #ff69b4;
+    border-radius: 2px;
+  }
+  
+  .playlist-section {
+    flex: 1;
+    padding-top: 15vh;
+    margin-left:2vh;
+  }
+  
+  .playlist-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+  
+  .playlist-header h1 {
+    margin: 0;
+    font-size: 32px;
+  }
+  
+  .playlist-header p {
+    color: #666;
+    margin: 0;
+  }
+  
+  .menu-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .song-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .song-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .song-item.active {
+    background: rgba(255, 105, 180, 0.1);
+  }
+  
+  .number {
+    width: 24px;
+    color: #666;
+  }
+  
+  .song-info {
+    flex: 1;
+    margin-left: 16px;
+  }
+  
+  .title {
+    font-weight: 500;
+  }
+  
+  .artist {
+    font-size: 12px;
+    color: #666;
+    display: block;
+  }
+  
+  .play {
+    opacity: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .song-item:hover .play {
+    opacity: 1;
+  }
+  
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #444;
+  }
+  
+  .play-pause {
+    color: #fff;
+  }
+  
+  .back-button,
+  .skip-btn,
+  .shuffle,
+  .repeat,
+  .menu-btn,
+  .play {
+    padding: 8px;
+    transition: opacity 0.2s;
+  }
+  
+  button:hover {
+    opacity: 0.7;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  /* render animation */
+
+/* Disc zoom animation */
+.disc-player {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: zoomIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Play button expand animation */
+.play-pause {
+  opacity: 0;
+  transform: scale(0);
+  animation: expandButton 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+@keyframes expandButton {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Controls slide up animation */
+.animate-slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s forwards;
+}
+
+.shuffle-repeat.animate-slide-up {
+  animation-delay: 0.8s;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Back button slide in from left */
+.back-button {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.8s forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* Playlist header fade in */
+.playlist-header {
+  opacity: 0;
+  animation: fadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Song items slide up */
+.song-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideUpFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Exit animations */
+.animate-exit .disc-player {
+  animation: zoomOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .play-pause {
+  animation: shrinkButton 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .player-controls {
+  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .shuffle-repeat {
+  animation: slideDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+.animate-exit .back-button {
+  animation: slideOutLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .playlist-header {
+  animation: fadeOut 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-exit .song-item {
+  animation: slideDownFade 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Reverse animation for each song item */
+.animate-exit .song-item:nth-child(1) { animation-delay: 0s; }
+.animate-exit .song-item:nth-child(2) { animation-delay: 0.1s; }
+.animate-exit .song-item:nth-child(3) { animation-delay: 0.2s; }
+.animate-exit .song-item:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes shrinkButton {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideDownFade {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+
+/* Add entrance zoom animation for background */
+.music-background {
+  animation: zoomInBackground 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Add exit zoom animation for background */
+.animate-exit .music-background {
+  animation: zoomOutBackground 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes zoomInBackground {
+  0% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOutBackground {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+
+
+
+/* sidebar.css */
+
+
+
+
+
+.sidebar-container {
+  position: fixed;
+  top: 50%;
+  left: -2vh;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3vh;
+  background-color: rgba(255, 255, 255, 0.53);
+  padding: 2vh;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar-button {
+  padding: 0.75rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sidebar-button:hover {
+  color: #6087b4;
+  transform: scale(1.5);
+}
+
+.sidebar-button.active {
+  color: #ef4444;
+  transform: scale(1.5);
+}
+
+
+@media screen and (max-width: 768px) {
+  .sidebar-button {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar-button {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+}
+
+
+
+/* topbar.css */
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: transparent;
+  z-index: 50;
+  border-radius: 50px 50px 0 0;
+  margin-top: 0.7vh;
+}
+
+
+.navbar-container {
+  margin: 0 auto;
+  padding: 0 16px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+  .topbar-icon {
+  opacity: 0.5;
+  zoom:20%;
+  margin-right: 10vw;
+
+  }
+
+
+
+.circle-icon .icon {
+  color: white;
+  stroke: none;
+}
+
+.control-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(216, 208, 208, 0.2);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  zoom:115%;
+}
+
+.control-button:hover {
+  background-color: rgba(255, 255, 255, 0.311);
+}
+
+.help-button {
+  padding: 0 14px;
+  height: 32px;
+  border-radius: 9999px;
+  background-color: rgba(59, 130, 246, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: pulse 2s infinite;
+  border: none;
+  cursor: pointer;
+}
+
+.help-button:hover {
+  background-color: rgba(37, 90, 206, 0.8);
+  animation: reverse-pulse 4s infinite;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.7);
+  stroke-width: 1.5px;
+}
+
+.control-button .icon {
+  stroke-width: 1.5px;
+}
+
+.help-button .icon {
+  stroke-width: 1.5px;
+  color: white;
+}
+
+.help-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .7;
+  }
+}

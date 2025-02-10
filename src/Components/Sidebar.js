@@ -1,6 +1,7 @@
 
 import React from 'react';
-import './Sidebar.css';
+// import './Sidebar.css';
+import '../App.css'
 import { Plane, Headphones, MonitorPlay, Calendar, Settings, User } from 'lucide-react';
 
 const Sidebar = ({ activeIcon, setActiveIcon }) => {
