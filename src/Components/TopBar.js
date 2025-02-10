@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 // import './TopBar.css'
 import '../App.css'
 import { Sun, SunDim, Volume1, Volume2, HelpCircle } from 'lucide-react';
-const topicon = process.env.PUBLIC_URL + '/Media/topicon.png';
+
+const topicon = `${import.meta.env.BASE_URL}media/topicon.png`;
+
 const Navbar = () => {
 
 
