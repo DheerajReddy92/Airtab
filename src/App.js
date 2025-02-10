@@ -5,7 +5,7 @@ import TopBar from './Components/TopBar';
 import Music from './Components/Music';
 import Movie from './Components/Movie';
 import { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   const [activeIcon, setActiveIcon] = useState('plane');
