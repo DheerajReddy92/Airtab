@@ -15,7 +15,8 @@ const Navbar = () => {
             <img src={topicon} alt="Logo" />
           </div>
           
-          <button
+          <button 
+          
    
             className="control-button"
             aria-label="decrease brightness"
