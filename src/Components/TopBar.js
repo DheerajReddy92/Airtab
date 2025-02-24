@@ -16,7 +16,7 @@ const Navbar = () => {
           </div>
           
           <button 
-          
+           
    
             className="control-button"
             aria-label="decrease brightness"
